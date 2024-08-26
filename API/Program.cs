@@ -1,19 +1,9 @@
-using API.Data;
-using Microsoft.EntityFrameworkCore;
+using API.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
-builder.Services.AddControllers();
-builder.Services.AddDbContext<DataContext>(opt =>
-{
-    opt.UseSqlite(
-        builder.Configuration.GetConnectionString("DefaultConnection")
-        );
-});
-
-builder.Services.AddCors();
+builder.Services.AddApplicationService(builder.Configuration);
+builder.Services.AddIdentityService(builder.Configuration);
 
 var app = builder.Build();
 
@@ -23,6 +13,11 @@ app.UseCors(
     .AllowAnyMethod()
     .WithOrigins("http://localhost:4200", "https://localhost:4200")
     );
+
+// ordering is important here.
+app.UseAuthentication();
+app.UseAuthorization();
+
 
 app.MapControllers();
 
