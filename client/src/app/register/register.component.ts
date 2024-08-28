@@ -15,13 +15,11 @@ export class RegisterComponent {
   // @Output() cancelRegister = new EventEmitter();
   //                             |
   // introduced in Angular 17.2 \|/
-  usersFromHomeComponent = input.required<any>();
   cancelRegister = output<boolean>();
 
   model: any = {};
 
   register() {
-    console.log(this.model);
     this.accountService.register(this.model).subscribe({
       next: (response) => {
         console.log(response);
