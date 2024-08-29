@@ -29,7 +29,7 @@ public class BuggyController(DataContext context) : BaseApiController
     [HttpGet("server-error")]
     public ActionResult<AppUser> GetServerError()
     {
-        var thing = context.Users.Find(-1) ?? throw new Exception("Can't find a user with id=-1");
+        var thing = context.Users.Find(-1) ?? throw new Exception("Cannot find a user with id=-1");
 
         return thing;
     }
