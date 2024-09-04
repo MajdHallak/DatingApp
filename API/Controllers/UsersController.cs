@@ -27,16 +27,6 @@ public class UsersController(IUserRepository userRepository) : BaseApiController
 
         if (user == null) return NotFound();
 
-        // return new MemeberDto
-        // {
-        //     Id = user.Id,
-        //     KnownAs = user.KnownAs,
-        //        .
-        //        .
-        //        .
-        //        .
-        // };
-
         return user;
     }
 }

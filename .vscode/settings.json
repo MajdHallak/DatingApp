@@ -1,1 +1,7 @@
-{}
+{
+  "workbench.colorCustomizations": {
+    "tab.activeBackground": "#293099",
+    "activityBar.activeBorder": "#0078d4",
+    "window.activeBorder": "#2e3542"
+  }
+}
