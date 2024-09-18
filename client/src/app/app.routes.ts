@@ -10,6 +10,7 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { preventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
+import { TestingComponent } from './members/testing/testing.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -32,5 +33,6 @@ export const routes: Routes = [
   { path: 'errors', component: TestErrorsComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: 'server-error', component: ServerErrorComponent },
+  { path: 'testing', component: TestingComponent },
   { path: '**', component: HomeComponent, pathMatch: 'full' },
 ];
